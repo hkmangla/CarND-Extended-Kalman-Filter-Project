@@ -28,8 +28,8 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
      rmse += residual; 
   }
   rmse /= estimations.size();
-
-  return rmse.array().sqrt();
+  rmse = rmse.array().sqrt();
+  return rmse;
 }
 
 MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
